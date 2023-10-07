@@ -1,12 +1,13 @@
 from random import *
 from pygame import *
+import pygame
 
 
 init()
 
-screen = display.set_mode(flags=RESIZABLE)  # flags=NOFRAME
-display.set_caption('')
-icon = image.load('images/icons/test.ico').convert_alpha()
+screen = display.set_mode((500, 500), flags=RESIZABLE)  # flags=NOFRAME
+display.set_caption('robinzon')
+icon = image.load('images/icons/test.jpg').convert_alpha()
 display.set_icon(icon)
 
 w, h = display.get_surface().get_size()
@@ -20,9 +21,9 @@ while running:
 
     display.update()
 
-    keys = key.get_pressed()
-    for event in event.get():
-        if event.type == QUIT or keys[K_ESCAPE]:
+    keys = pygame.key.get_pressed()
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT or keys[pygame.K_ESCAPE]:
             running = False
-            quit()
+            pygame.quit()
 
