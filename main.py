@@ -5,9 +5,11 @@ import pygame
 
 init()
 
+path = ''
+
 screen = display.set_mode((500, 500), flags=RESIZABLE)  # flags=NOFRAME
-display.set_caption('robinzon')
-icon = image.load('images/icons/test.jpg').convert_alpha()
+display.set_caption('robinson')
+icon = image.load(path + 'images/icons/test.jpg').convert_alpha()
 display.set_icon(icon)
 
 w, h = display.get_surface().get_size()
