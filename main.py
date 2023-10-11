@@ -14,12 +14,15 @@ display.set_icon(icon)
 
 w, h = display.get_surface().get_size()
 
+menu = 'start'
+
 running = True
 while running:
 
     screen.fill('black')
 
-
+    if menu == 'start':
+        screen.fill('white')
 
     display.update()
 
