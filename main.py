@@ -7,22 +7,24 @@ init()
 
 path = ''
 
-screen = display.set_mode((500, 500), flags=RESIZABLE)  # flags=NOFRAME
+size = (500, 500)
+
+screen = display.set_mode(size, flags=RESIZABLE)  # flags=NOFRAME
 display.set_caption('robinson')
 icon = image.load(path + 'images/icons/test.jpg').convert_alpha()
 display.set_icon(icon)
-
-w, h = display.get_surface().get_size()
 
 menu = 'start'
 
 running = True
 while running:
-
+    w, h = pygame.display.get_surface().get_size()
+    size = (w, h)
     screen.fill('black')
 
     if menu == 'start':
-        screen.fill('white')
+        bg = pygame.transform.scale(pygame.image.load('images/images/bg.jpg').convert_alpha(), size)
+        screen.blit(bg, (0, 0))
 
     display.update()
 
